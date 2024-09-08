@@ -1,0 +1,27 @@
+้<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('header') %>
+  <div class="container">
+    <h1>Edit Blog</h1>
+    <form action="/edit/<%= blogDetails.id %>" method="POST">
+      <div>
+        <label for="blogTitle">Title:</label>
+        <input type="text" id="blogTitle" name="blogTitle" value="<%= blogDetails.title %>">
+      </div>
+      <div>
+        <label for="blogDes">Description:</label>
+        <textarea id="blogDes" name="blogDes"><%= blogDetails.description %></textarea>
+      </div>
+      <button class="save-btn" type="submit">Save</button>
+    </form>
+  </div>
+<%- include('footer') %>
+</body>
+</html>
